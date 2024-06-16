@@ -1,0 +1,80 @@
+project : 1
+
+prompt-->1
+Create a registration system using flask and sqllite3 for database
+you can use bootstrap for UI
+
+Registration System Details:
+it will get data from user like name,email,password and store it into database for login purpose
+
+Note: Not use sqlalchemy
+
+prompt-->2
+UnboundLocalError: cannot access local variable 'con' where it is not associated with a value
+
+prompt-->3
+UnboundLocalError
+UnboundLocalError: cannot access local variable 'con' where it is not associated with a value
+
+Traceback (most recent call last)
+File "C:\Users\Marhaba\Desktop\YouTube Courses\20 Python Flask Projects\project-1 registration system\app.py", line 31, in register
+hashed_password = generate_password_hash(password, method='sha256')
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\Marhaba\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\security.py", line 105, in generate_password_hash
+h, actual_method = _hash_internal(method, salt, password)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\Marhaba\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\security.py", line 70, in _hash_internal
+raise ValueError(f"Invalid hash method '{method}'.")
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+During handling of the above exception, another exception occurred:
+File "C:\Users\Marhaba\Desktop\YouTube Courses\20 Python Flask Projects\project-1 registration system\app.py", line 41, in register
+con.rollback()
+^^^
+During handling of the above exception, another exception occurred:
+File "C:\Users\Marhaba\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1498, in call
+return self.wsgi_app(environ, start_response)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\Marhaba\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1476, in wsgi_app
+response = self.handle_exception(e)
+^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\Marhaba\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+response = self.full_dispatch_request()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\Marhaba\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+rv = self.handle_user_exception(e)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\Marhaba\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+rv = self.dispatch_request()
+^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\Marhaba\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args) # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\Marhaba\Desktop\YouTube Courses\20 Python Flask Projects\project-1 registration system\app.py", line 45, in register
+con.close()
+^^^
+UnboundLocalError: cannot access local variable 'con' where it is not associated with a value
+
+
+prompt-->4
+Error occurred: Invalid hash method 'sha256'.
+
+
+----------------------
+
+
+Project:2
+create a login system using flask and sqllite3 for database
+use bootstrap for UI
+
+Login System Details:
+first user login then he will be able to go dashboard here will be a button to logout and after logined user cann't be able to go to login page untill he logout
+
+---------------------
+
+
+Project:3
+create middlewares to check user is logined or not logined because if i have 100 dashboard pages then i don't want to implement belwo logic on each page:
+if 'user_id' not in session:
+return redirect(url_for('login'))
+
+"Also create 2 or 3 dashboard simple pages "
